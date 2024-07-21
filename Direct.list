@@ -13,6 +13,8 @@ DOMAIN-KEYWORD,zerotier
 
 # IP段匹配
 IP-CIDR,219.146.1.66/32,no-resolve
+# IP段匹配zerotier
+IP-CIDR,103.195.103.0/24,no-resolve
 
 # 国内DNS
 DOMAIN-SUFFIX,dns.alidns.com
