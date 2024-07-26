@@ -1,10 +1,14 @@
 # 内容：OpenAi Bard anthropic
 # 域名关键字匹配
 DOMAIN-KEYWORD,zerotier
+DOMAIN-KEYWORD,tailscale
 
 # 域名后缀匹配
 DOMAIN-SUFFIX,zerotier.com
+DOMAIN-SUFFIX,tailscale.com
 
 # IP段匹配
 IP-CIDR,103.195.103.66/32,no-resolve
 #IP-CIDR,84.17.53.155/32,no-resolve
+
+IP-CIDR,103.84.155.46/32,no-resolve
