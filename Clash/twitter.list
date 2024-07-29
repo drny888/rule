@@ -1,7 +1,7 @@
 # 内容：twitter Bard anthropic
 # 域名关键字匹配
 DOMAIN-KEYWORD,twitter
-DOMAIN-KEYWORD,x
+# DOMAIN-KEYWORD,x
 # 域名后缀匹配
 DOMAIN-SUFFIX,x.com
 DOMAIN-SUFFIX,twitter.com
