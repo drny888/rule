@@ -14,4 +14,4 @@ DOMAIN-SUFFIX,tailscale.com
 # tailscale
 IP-CIDR,103.84.155.46/32,no-resolve
 IP-CIDR,148.163.220.210/32,no-resolve
-
+IP-CIDR,176.58.90.104/32,no-resolve
