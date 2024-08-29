@@ -3135,7 +3135,7 @@ config ruleset 'rule_1234'
 	option enabled '1'
 	option type 'remote'
 	option format 'binary'
-	option url 'https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/sing/geo/geoip/twitter.srs'
+	option url 'https://mirror.ghproxy.com/https://github.com/drny888/rule/raw/main/singbox/ProxyLite-twitter.srs'
 	option outbound 'direct-out'
 
 config node 'e021a3d8501492b8cf43747d4a237631'
