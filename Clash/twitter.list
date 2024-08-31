@@ -5,3 +5,4 @@ DOMAIN-KEYWORD,twitter
 # 域名后缀匹配
 DOMAIN-SUFFIX,x.com
 DOMAIN-SUFFIX,twitter.com
+DOMAIN-SUFFIX,twimg.com
