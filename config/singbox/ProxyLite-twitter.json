@@ -4,18 +4,21 @@
     {
       "domain": [
         "twitter.com",
+        "twimg.com",
         "x.com"
       ]
     },
     {
       "domain_suffix": [
         ".twitter.com",
+        ".twimg.com",
         ".x.com"
       ]
     },
     {
       "domain_keyword": [
-        "twitter"
+        "twitter",
+        "twimg"
       ]
     },
     {
