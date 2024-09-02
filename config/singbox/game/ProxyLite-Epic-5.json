@@ -2,29 +2,12 @@
   "version": 1,
   "rules": [
     {
-      "domain": [
-        "epicgames.com",
-        "epicgames.dev",
-        "helpshift.com",
-        "paragon.com",
-        "unrealengine.com"
-      ]
-    },
-    {
       "domain_suffix": [
         ".epicgames.com",
         ".epicgames.dev",
         "helpshift.com",
         ".paragon.com",
         ".unrealengine.com"
-      ]
-    },
-    {
-      "domain_keyword": [
-        "epicgames",
-        "helpshift",
-        "paragon",
-        "unrealengine"
       ]
     }
   ]
