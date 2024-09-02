@@ -3,28 +3,19 @@
   "rules": [
     {
       "domain": [
-        "epicgames.com",
-        "epicgames.dev",
-        "helpshift.com",
-        "paragon.com",
-        "unrealengine.com"
+        "cloudsync-prod.s3.amazonaws.com",
+        "eaasserts-a.akamaihd.net",
+        "origin-a.akamaihd.net",
+        "originasserts.akamaized.net",
+        "originasserts.akamaized.net",
+        "originasserts.akamaized.net",
+        "rtm.tnt-ea.com"
       ]
     },
     {
       "domain_suffix": [
-        ".epicgames.com",
-        ".epicgames.dev",
-        "helpshift.com",
-        ".paragon.com",
-        ".unrealengine.com"
-      ]
-    },
-    {
-      "domain_keyword": [
-        "epicgames",
-        "helpshift",
-        "paragon",
-        "unrealengine"
+        ".ea.com",
+        ".origin.com"
       ]
     }
   ]
