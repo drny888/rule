@@ -93,7 +93,7 @@ config routing_node '1147228'
 	option node 'node_1147218'
 
 config routing_node '1472228'
-	option label 'Game'
+	option label '🎮Game'
 	option enabled '1'
 	option node 'node_1472218'
 
@@ -521,7 +521,7 @@ config routing_rule '1147238_host'
 	option outbound '1147228'
 
 config routing_rule '1472238_host'
-	option label 'geosite-game'
+	option label 'geosite-🎮game'
 	option enabled '1'
 	option mode 'default'
 	list rule_set 'rule_1472258'
