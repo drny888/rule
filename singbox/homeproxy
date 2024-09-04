@@ -243,7 +243,6 @@ config ruleset 'rule_1472258'
 	option type 'remote'
 	option format 'binary'
 	option url 'https://mirror.ghproxy.com/https://github.com/drny888/rule/raw/main/config/singbox/game/ProxyLite-Epic-5.srs'
-        https://mirror.ghproxy.com/https://github.com/drny888/rule/raw/main/config/singbox/game/ProxyLite-Origin-7.srs
 	option outbound 'direct-out'
 
 config ruleset '92928ac260c596e17c76796c615d4314'
