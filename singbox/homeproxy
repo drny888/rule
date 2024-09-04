@@ -287,7 +287,7 @@ config ruleset 'rule_1471218'
 	option enabled '1'
 	option type 'remote'
 	option format 'binary'
-	option url 'https://mirror.ghproxy.com/httpshttps://github.com/drny888/rule/raw/main/config/singbox/ProxyLite-Speedtest.srs'
+	option url 'https://mirror.ghproxy.com/https://github.com/drny888/rule/raw/main/config/singbox/ProxyLite-Speedtest.srs'
 	option outbound 'direct-out'
 
 config ruleset '92928ac260c596e17c76796c615d4314'
