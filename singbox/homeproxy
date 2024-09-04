@@ -238,7 +238,7 @@ config ruleset '600c657091cbd955e89e0115f3f67cd1'
 	option outbound 'direct-out'
 
 config ruleset 'rule_1472258'
-	option label 'geosite-game'
+	option label 'geosite-Epic'
 	option enabled '1'
 	option type 'remote'
 	option format 'binary'
