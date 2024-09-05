@@ -97,11 +97,6 @@ config routing_node '1472228'
 	option enabled '1'
 	option node 'node_1472218'
 
-config routing_node '1471238'
-	option label '♻️Speedtest'
-	option enabled '1'
-	option node 'node_1471228'
-
 config routing_node '4854984'
 	option label 'OpenAI'
 	option enabled '1'
@@ -527,6 +522,11 @@ config routing_node '454654'
 	option label 'Apple'
 	option enabled '1'
 	option node 'node_4545646'
+
+config routing_node '1471238'
+	option label '♻️Speedtest'
+	option enabled '1'
+	option node 'node_1471228'
 
 config routing_rule '12131_host'
 	option label 'clash_mode:direct'
