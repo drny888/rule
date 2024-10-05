@@ -1,4 +1,4 @@
-pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 日本故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇸🇬 加坡节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 🟢 直连]}
+pr: &pr {type: select, proxies: [🚀 节点选择, 🔯 香港故转, 🔯 日本故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇸🇬 加坡节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, ♻️ 拒绝, 🟢 直连]}
 proxy-providers:
   Airport_01:
     type: http
@@ -33,7 +33,10 @@ proxies:
 - name: "🟢 直连"
   type: direct
   udp: true
-  
+- name: "♻️ 拒绝"
+  type: reject
+  udp: true
+
 proxy-groups:
   - {name: 🚀 节点选择, type: select, proxies: [🔯 香港故转, 🔯 日本故转, ♻️ 香港自动, ♻️ 日本自动, ♻️ 美国自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇸🇬 加坡节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🌐 全部节点, 🟢 直连]}
   - {name: 📹 YouTube, <<: *pr}
