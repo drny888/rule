@@ -69,6 +69,7 @@ proxy-groups:
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连|拒绝)).)*$"}
   - {name: 🌐 全部节点, type: select, include-all: true}
 rules:
+  - RULE-SET,游戏平台_domain,🎮 游戏平台
   - RULE-SET,private_domain,🟢 直连
   - RULE-SET,direct1,🟢 直连
   - RULE-SET,apple_domain,🍎 Apple
@@ -82,7 +83,7 @@ rules:
   - RULE-SET,tiktok_domain,🎵 TikTok
   - RULE-SET,speedtest_domain,✈️ Speedtest
   - RULE-SET,telegram_domain,📲 Telegram
-  - RULE-SET,游戏平台_domain,🎮 游戏平台
+  #- RULE-SET,游戏平台_domain,🎮 游戏平台
   - RULE-SET,twitter推特_domain,📲 twitter推特
   - RULE-SET,netflix_domain,🎥 NETFLIX
   - RULE-SET,paypal_domain,💶 PayPal
