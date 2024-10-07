@@ -83,6 +83,7 @@ rules:
   - RULE-SET,speedtest_domain,✈️ Speedtest
   - RULE-SET,telegram_domain,📲 Telegram
   - RULE-SET,游戏平台_steam,🎮 游戏平台
+  - RULE-SET,游戏平台_origin,🎮 游戏平台
   - RULE-SET,twitter推特_domain,📲 twitter推特
   - RULE-SET,netflix_domain,🎥 NETFLIX
   - RULE-SET,paypal_domain,💶 PayPal
@@ -116,7 +117,7 @@ rule-providers:
   #游戏平台_domain: { <<: *class, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/classical/epicgames.list" }
   #游戏平台_domain: { <<: *domain, url: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/epicgames.mrs" }
   游戏平台_steam: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs" }
-  #游戏平台_domain: { <<: *domain, url: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/origin.mrs" }
+  游戏平台_origin: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/origin.mrs" }
   #游戏平台_domain: { <<: *domain, url: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/sony.mrs" }
   #游戏平台_domain: { <<: *domain, url: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/steam.mrs" }
   #游戏平台_domain: { <<: *domain, url: "https://mirror.ghproxy.com/https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/nintendo.mrs" }
