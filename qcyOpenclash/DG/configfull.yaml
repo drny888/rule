@@ -1,6 +1,6 @@
 # 机场订阅，名称不能重复
 proxy-providers:
-  Airport_01:
+  ImmTelecom:
     type: http
     interval: 1800
     health-check:
