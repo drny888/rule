@@ -8,16 +8,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: "https://mhskso.sbs/?L1N1YnNjcmlwdGlvbi9DbGFzaD9zaWQ9MTY2MDkmdG9rZW49S25RV1dFN3ZLV1MmbW09MjY2OTUmYzc0YjRkODE5Yg=="
-  TAG:
-    type: http
-    interval: 1800
-    health-check:
-      enable: true
-      url: https://www.gstatic.com/generate_204
-      interval: 300
-    proxy: 🟢 直连
-    url: "https://chomthong.central-world.org/api/v1/client/subscribe?token=ee07d092b3d3a7dc85f436715b6c99bb"  
+    url: "https://mhskso.sbs/?L1N1YnNjcmlwdGlvbi9DbGFzaD9zaWQ9MTY2MDkmdG9rZW49S25RV1dFN3ZLV1MmbW09MjY2OTUmYzc0YjRkODE5Yg=="  
       
 # 用于下载订阅时指定UA
 global-ua: clash
@@ -206,8 +197,8 @@ rule-anchor:
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers: 
   private_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
-  proxylite: {!!merge <<: *qcy, url: "https://raw.githubusercontent.com/qichiyuhub/rule/master/ProxyLite.list"}
-  ai: {!!merge <<: *qcy, url: "https://raw.githubusercontent.com/qichiyuhub/rule/master/AI.list"}
+  proxylite: {!!merge <<: *qcy, url: "https://raw.githubusercontent.com/qcyhub/rule/master/ProxyLite.list"}
+  ai: {!!merge <<: *qcy, url: "https://raw.githubusercontent.com/drny888/rule/refs/heads/main/Clash/AI.list"}
   youtube_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
   google_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
   github_domain: {!!merge <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
