@@ -162,33 +162,33 @@ proxy-groups:
   - {name: ♻️ 自动选择, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(直连|拒绝|2x|3x|4x|5x|10x)).)*$"}
   - {name: 🌐 全部节点, type: select, include-all: true}
 rules:
-  - RULE-SET,private_domain,🟢 直连
-  - RULE-SET,apple_domain,🍎 Apple
-  - RULE-SET,proxylite,🚀 节点选择
-  - RULE-SET,ai,🤖 ChatGPT
-  - RULE-SET,github_domain,👨🏿‍💻 GitHub
-  - RULE-SET,youtube_domain,📹 YouTube
-  - RULE-SET,google_domain,🍀 Google
-  - RULE-SET,onedrive_domain,🐬 OneDrive
-  - RULE-SET,microsoft_domain,🪟 Microsoft
-  - RULE-SET,tiktok_domain,🎵 TikTok
-  - RULE-SET,speedtest_domain,✈️ Speedtest
-  - RULE-SET,telegram_domain,📲 Telegram
-  - RULE-SET,twitter推特_domain,📲 twitter推特
-  - RULE-SET,游戏平台_steam,🎮 游戏平台
-  - RULE-SET,游戏平台_origin,🎮 游戏平台
-  - RULE-SET,游戏平台_sony,🎮 游戏平台
-  - RULE-SET,游戏平台_epicgames,🎮 游戏平台
-  - RULE-SET,游戏平台_epicbrowser,🎮 游戏平台
-  - RULE-SET,游戏平台_nintendo,🎮 游戏平台
-  - RULE-SET,netflix_domain,🎥 NETFLIX
-  - RULE-SET,paypal_domain,💶 PayPal
-  - RULE-SET,geolocation-!cn,🚀 节点选择
-  - RULE-SET,cn_domain,🎯 全球直连
-  - RULE-SET,google_ip,🍀 Google,no-resolve
-  - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
-  - RULE-SET,telegram_ip,📲 Telegram,no-resolve
-  - RULE-SET,cn_ip,🎯 全球直连
+  #- RULE-SET,private_domain,🟢 直连
+  #- RULE-SET,apple_domain,🍎 Apple
+  #- RULE-SET,proxylite,🚀 节点选择
+  #- RULE-SET,ai,🤖 ChatGPT
+  #- RULE-SET,github_domain,👨🏿‍💻 GitHub
+  #- RULE-SET,youtube_domain,📹 YouTube
+  #- RULE-SET,google_domain,🍀 Google
+  #- RULE-SET,onedrive_domain,🐬 OneDrive
+  #- RULE-SET,microsoft_domain,🪟 Microsoft
+  #- RULE-SET,tiktok_domain,🎵 TikTok
+  #- RULE-SET,speedtest_domain,✈️ Speedtest
+  #- RULE-SET,telegram_domain,📲 Telegram
+  #- RULE-SET,twitter推特_domain,📲 twitter推特
+  #- RULE-SET,游戏平台_steam,🎮 游戏平台
+  #- RULE-SET,游戏平台_origin,🎮 游戏平台
+  #- RULE-SET,游戏平台_sony,🎮 游戏平台
+  #- RULE-SET,游戏平台_epicgames,🎮 游戏平台
+  #- RULE-SET,游戏平台_epicbrowser,🎮 游戏平台
+  #- RULE-SET,游戏平台_nintendo,🎮 游戏平台
+  #- RULE-SET,netflix_domain,🎥 NETFLIX
+  #- RULE-SET,paypal_domain,💶 PayPal
+  #- RULE-SET,geolocation-!cn,🚀 节点选择
+  #- RULE-SET,cn_domain,🎯 全球直连
+  #- RULE-SET,google_ip,🍀 Google,no-resolve
+  #- RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
+  #- RULE-SET,telegram_ip,📲 Telegram,no-resolve
+  #- RULE-SET,cn_ip,🎯 全球直连
   - RULE-SET,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/LocalAreaNetwork.list,DIRECT
   - RULE-SET,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/UnBan.list,DIRECT
   - RULE-SET,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaDomain.list,DIRECT
@@ -198,7 +198,7 @@ rules:
   - RULE-SET,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaCompanyIp.list,DIRECT
   - RULE-SET,https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/ChinaIp.list,DIRECT
   - GEOIP,CN,DIRECT,no-resolve
-  - MATCH,🐟 漏网之鱼
+  - MATCH,🐟 漏网之鱼,PROXY
 rule-anchor:
   ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
