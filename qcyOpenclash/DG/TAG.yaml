@@ -8,8 +8,8 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: "https://chomthong.central-world.org/api/v1/client/subscribe?token=ee07d092b3d3a7dc85f436715b6c99bb"
-      
+    url: "https://"
+      b
 # 用于下载订阅时指定UA
 global-ua: clash
     
