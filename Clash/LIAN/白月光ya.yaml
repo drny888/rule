@@ -8,7 +8,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: "https://UHPzGLAwAg.qinyues4.cc/34424a6590d9affb15b6ec7e5c6f4418"
+    url: "https://"
       
 # 用于下载订阅时指定UA
 global-ua: clash
