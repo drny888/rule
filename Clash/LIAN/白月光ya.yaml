@@ -239,7 +239,7 @@ rule-providers:
   netflix_domain: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.list"}
   HBO MAX: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/HBO/HBO.list"}
   Spotify: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.list"}
-  Proxy: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/Proxy.list"}
+  Proxy: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/drny888/rule/refs/heads/main/Clash/LIAN/Proxy.list"}
   Global: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global.list"}
   #cn_domain:[]FINAL
   #ruleset=➡️ 国内,[]FINAL
