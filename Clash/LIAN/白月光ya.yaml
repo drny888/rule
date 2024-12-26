@@ -150,7 +150,7 @@ proxy-groups:
   - {name: 🎯 全球直连, type: select, proxies: [🟢 直连, 🚀 节点选择]}
   - {name: 🌍 国外, type: select, proxies: [🟢 直连, 🚀 节点选择]}
   #- {name: ➡️ 国内, type: select, proxies: [🟢 直连, 🚀 节点选择]}
-  - {name: 🐟 漏网之鱼,!!merge <<: *pr}
+  - {name: ➡️ 国内,!!merge <<: *pr}
   - {name: ♻️🇭🇰 香港-自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美|官网|剩余|到期|异常|2x|3x|4x|5x)).)*$"}
   - {name: ♻️🇸🇬 加坡-自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新|SG|(?i)Singapore))^((?!(台|日|韩|港|深|美|官网|剩余|到期|异常|2x|3x|4x|5x)).)*$"}
   - {name: ♻️🇯🇵 日本-自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美|官网|剩余|到期|异常|2x|3x|4x|5x)).)*$" }
@@ -208,7 +208,7 @@ rules:
   - RULE-SET,twitter推特_ip,📲 twitter推特,no-resolve
   - RULE-SET,facebook_ip,🗣️ facebook,no-resolve
   - RULE-SET,cn_ip,🎯 全球直连
-  - MATCH,🐟 漏网之鱼
+  - MATCH,➡️ 国内
 rule-anchor:
   ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
