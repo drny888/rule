@@ -140,8 +140,10 @@ proxy-groups:
   - {name: 🎵 TikTok,!!merge <<: *pr}
   - {name: 📲 Telegram,!!merge <<: *pr}
   - {name: 📲 twitter推特, <<: *pr}
+  - {name: 🗣️ facebook, <<: *pr}
+  - {name: 🌳 Amazon, <<: *pr}
   - {name: 🎮 游戏平台, <<: *pr}
-  - {name: 🎥 NETFLIX,!!merge <<: *pr}
+  - {name: 📀 流媒体,!!merge <<: *pr}
   - {name: ✈️ Speedtest,!!merge <<: *pr}
   - {name: 💶 PayPal,!!merge <<: *pr}
   - {name: 🍎 Apple, type: select, proxies: [🟢 直连, 🚀 节点选择]}
@@ -166,32 +168,54 @@ proxy-groups:
 rules:
   - RULE-SET,private_domain,🟢 直连
   - RULE-SET,apple_domain,🍎 Apple
+  - RULE-SET,apple,🍎 Apple
   - RULE-SET,proxylite,🚀 节点选择
   - RULE-SET,ai,🤖 ChatGPT
   - RULE-SET,AI1,🤖 ChatGPT
   - RULE-SET,AI2,✨ AI2
   - RULE-SET,github_domain,👨🏿‍💻 GitHub
+  - RULE-SET,github,👨🏿‍💻 GitHub
   - RULE-SET,youtube_domain,📹 YouTube
+  - RULE-SET,youtube,📹 YouTube
   - RULE-SET,google_domain,🍀 Google
+  - RULE-SET,google,🍀 Google
   - RULE-SET,onedrive_domain,🐬 OneDrive
   - RULE-SET,microsoft_domain,🪟 Microsoft
+  - RULE-SET,microsoft,🪟 Microsoft
   - RULE-SET,tiktok_domain,🎵 TikTok
+  - RULE-SET,tiktok,🎵 TikTok
   - RULE-SET,speedtest_domain,✈️ Speedtest
   - RULE-SET,telegram_domain,📲 Telegram
+  - RULE-SET,telegram,📲 Telegram
   - RULE-SET,twitter推特_domain,📲 twitter推特
+  - RULE-SET,twitter推特,📲 twitter推特
+  - RULE-SET,facebook,🗣️ facebook
+  - RULE-SET,Amazon,🌳 Amazon
   - RULE-SET,游戏平台_steam,🎮 游戏平台
+  - RULE-SET,游戏平台_sm,🎮 游戏平台
   - RULE-SET,游戏平台_origin,🎮 游戏平台
   - RULE-SET,游戏平台_sony,🎮 游戏平台
+  - RULE-SET,游戏平台_sy,🎮 游戏平台
   - RULE-SET,游戏平台_epicgames,🎮 游戏平台
+  - RULE-SET,游戏平台_es,🎮 游戏平台
+  - RULE-SET,游戏平台_ea,🎮 游戏平台
+  - RULE-SET,游戏平台_Blizzard,🎮 游戏平台
+  - RULE-SET,游戏平台_ubi,🎮 游戏平台
   - RULE-SET,游戏平台_epicbrowser,🎮 游戏平台
   - RULE-SET,游戏平台_nintendo,🎮 游戏平台
-  - RULE-SET,netflix_domain,🎥 NETFLIX
+  - RULE-SET,游戏平台_no,🎮 游戏平台
+  - RULE-SET,netflix_domain,📀 流媒体
+  - RULE-SET,disney,📀 流媒体
+  - RULE-SET,HBO MAX,📀 流媒体
+  - RULE-SET,Spotify,📀 流媒体
   - RULE-SET,paypal_domain,💶 PayPal
   - RULE-SET,ZEROTIER内网穿透,🤖 ZEROTIER内网穿透
+   - RULE-SET,Proxy,🚀 节点选择
   - RULE-SET,geolocation-!cn,🚀 节点选择
+  - RULE-SET,global,🚀 节点选择
   - RULE-SET,cn_domain,🎯 全球直连
   - RULE-SET,google_ip,🍀 Google,no-resolve
-  - RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve
+  - RULE-SET,netflix_ip,📀 流媒体,no-resolve
   - RULE-SET,telegram_ip,📲 Telegram,no-resolve
   - RULE-SET,cn_ip,🎯 全球直连
   - MATCH,🐟 漏网之鱼
@@ -207,26 +231,48 @@ rule-providers:
   AI1: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/AI.list"}
   AI2: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/AI2.list"}
   youtube_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
+  youtube: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.list"}
   google_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
+  google: {!!merge <<: *class, url: "https://github.sk365.us.kg/github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.list"}
   github_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
+  github: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list"}
   telegram_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
+  telegram: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.list"}
   twitter推特_domain: { <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite//twitter.mrs" }
+  twitter推特: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.list"}
+  facebook: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Facebook/Facebook.list"}
+  Amazon: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Amazon/Amazon.list"}
   游戏平台_steam: { <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs" }
+  游戏平台_sm: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Steam/Steam.list"}
   游戏平台_origin: { <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/origin.mrs" }
   游戏平台_sony: { <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/sony.mrs" }
+  游戏平台_sy: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Sony/Sony.list"}
   游戏平台_epicgames: { <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/epicgames.mrs" }
+  游戏平台_es: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Epic/Epic.list"}
+  游戏平台_ea: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/EA/EA.list"}
+  游戏平台_Blizzard: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Blizzard/Blizzard.list"}
+  游戏平台_ubi: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/UBI/UBI.list"}
   游戏平台_epicbrowser: { <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/epicbrowser.mrs" }
   游戏平台_nintendo: { <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/nintendo.mrs" }
+  游戏平台_no: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Nintendo/Nintendo.list"}
   netflix_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"}
+  disney: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.list"}
+  HBO MAX: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/HBO/HBO.list"}
+  Spotify: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.list"}
   paypal_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/paypal.mrs"}
   onedrive_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.mrs"}
   microsoft_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"}
+  microsoft: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Microsoft/Microsoft.list"}
   apple_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs"}
+  apple: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Apple/Apple.list"}
   speedtest_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs"}
   tiktok_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs"}
+  tiktok: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.list"}
   ZEROTIER内网穿透: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/drny888/rule/main/Clash/Zerotier.list"}
   gfw_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
+  Proxy: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/drny888/rule/refs/heads/main/Clash/LIAN/Proxy.list"}
   geolocation-!cn: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
+  global: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global.list"}
   cn_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
   
   cn_ip: {!!merge <<: *ip, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
