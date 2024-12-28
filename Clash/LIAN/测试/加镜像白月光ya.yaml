@@ -210,7 +210,7 @@ rules:
   - RULE-SET,Spotify,📀 流媒体
   - RULE-SET,paypal_domain,💶 PayPal
   - RULE-SET,ZEROTIER内网穿透,🤖 ZEROTIER内网穿透
-   - RULE-SET,Proxy,🚀 节点选择
+  - RULE-SET,Proxy,🚀 节点选择
   - RULE-SET,geolocation-!cn,🚀 节点选择
   - RULE-SET,global,🚀 节点选择
   - RULE-SET,cn_domain,🎯 全球直连
