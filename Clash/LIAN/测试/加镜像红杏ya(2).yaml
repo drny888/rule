@@ -233,7 +233,7 @@ rule-providers:
   # youtube_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
   youtube: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.list"}
   # google_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
-  google: {!!merge <<: *class, url: "https://github.sk365.us.kg/github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.list"}
+  google: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.list"}
   # github_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
   github: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list"}
   # telegram_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
