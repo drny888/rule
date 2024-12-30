@@ -268,7 +268,7 @@ rule-providers:
   speedtest_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs"}
   # tiktok_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs"}
   tiktok: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.list"}
-  ZEROTIER内网穿透: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/drny888/rule/main/Clash/Zerotier.list"}
+  ZEROTIER内网穿透: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/drny888/rule/refs/heads/main/Clash/Zerotier.list"}
   gfw_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"}
   Proxy: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/drny888/rule/refs/heads/main/Clash/LIAN/Proxy.list"}
   # geolocation-!cn: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"}
