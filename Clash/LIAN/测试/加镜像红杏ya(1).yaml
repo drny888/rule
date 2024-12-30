@@ -8,7 +8,7 @@ proxy-providers:
       url: https://www.gstatic.com/generate_204
       interval: 300
     proxy: 🟢 直连
-    url: "https://hongxingdl.com/hxvip?token=33913eb2cd4eb4373280ede97023de02"
+    url: "https://"
       
 # 用于下载订阅时指定UA
 global-ua: clash
