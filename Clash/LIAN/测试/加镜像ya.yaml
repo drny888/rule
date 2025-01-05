@@ -179,16 +179,16 @@ rules:
   # - RULE-SET,github,👨🏿‍💻 GitHub
   - RULE-SET,youtube_domain,📹 YouTube
   # - RULE-SET,youtube,📹 YouTube
-  - RULE-SET,google_domain,🍀 Google
-  # - RULE-SET,google,🍀 Google
+  # - RULE-SET,google_domain,🍀 Google
+  - RULE-SET,google,🍀 Google
   - RULE-SET,onedrive_domain,🐬 OneDrive
   - RULE-SET,microsoft_domain,🪟 Microsoft
   # - RULE-SET,microsoft,🪟 Microsoft
   - RULE-SET,tiktok_domain,🎵 TikTok
   # - RULE-SET,tiktok,🎵 TikTok
   - RULE-SET,speedtest_domain,✈️ Speedtest
-  - RULE-SET,telegram_domain,📲 人脉(📲Telegram 📲twitter推特 🗣️facebook)
-  # - RULE-SET,telegram,📲 Telegram
+  # - RULE-SET,telegram_domain,📲 人脉(📲Telegram 📲twitter推特 🗣️facebook)
+  - RULE-SET,telegram,📲 人脉(📲Telegram 📲twitter推特 🗣️facebook)
   - RULE-SET,twitter推特_domain,📲 人脉(📲Telegram 📲twitter推特 🗣️facebook)
   # - RULE-SET,twitter推特,📲 twitter推特
   - RULE-SET,facebook,📲 人脉(📲Telegram 📲twitter推特 🗣️facebook)
@@ -216,9 +216,9 @@ rules:
   # - RULE-SET,geolocation-!cn,🚀 节点选择
   - RULE-SET,global,🚀 节点选择
   - RULE-SET,cn_domain,🎯 全球直连
-  - RULE-SET,google_ip,🍀 Google,no-resolve
+  # - RULE-SET,google_ip,🍀 Google,no-resolve
   - RULE-SET,netflix_ip,📀 流媒体,no-resolve
-  - RULE-SET,telegram_ip,📲 人脉(📲Telegram 📲twitter推特 🗣️facebook),no-resolve
+  # - RULE-SET,telegram_ip,📲 人脉(📲Telegram 📲twitter推特 🗣️facebook),no-resolve
   - RULE-SET,twitter推特_ip,📲 人脉(📲Telegram 📲twitter推特 🗣️facebook),no-resolve
   - RULE-SET,cn_ip,🎯 全球直连
   - MATCH,🐟 漏网之鱼
@@ -235,12 +235,12 @@ rule-providers:
   AI2: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/AI2.list"}
   youtube_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"}
   # youtube: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.list"}
-  google_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
-  # google: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.list"}
+  # google_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
+  google: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Google/Google.list"}
   github_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"}
   # github: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list"}
-  telegram_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
-  # telegram: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.list"}
+  # telegram_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"}
+  telegram: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Telegram/Telegram.list"}
   twitter推特_domain: { <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/twitter.mrs" }
   # twitter推特: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Twitter/Twitter.list"}
   facebook: {!!merge <<: *class, url: "https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Facebook/Facebook.list"}
@@ -279,7 +279,7 @@ rule-providers:
   cn_domain: {!!merge <<: *domain, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"}
   
   cn_ip: {!!merge <<: *ip, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
-  google_ip: {!!merge <<: *ip, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
-  telegram_ip: {!!merge <<: *ip, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
+  # google_ip: {!!merge <<: *ip, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
+  # telegram_ip: {!!merge <<: *ip, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
   twitter推特_ip: {!!merge <<: *ip, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.mrs" }
   netflix_ip: {!!merge <<: *ip, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
