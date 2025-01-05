@@ -1,6 +1,6 @@
 # 机场订阅，名称不能重复
 proxy-providers:
-  白月光yaml:
+  白yaml:
     type: http
     interval: 1800
     health-check:
@@ -129,7 +129,7 @@ proxies:
 pr: &pr {type: select, proxies: [🚀 节点选择, ♻️ 港台日新韩-自动, ♻️ 台日新韩-自动, ♻️🇭🇰 香港-自动, ♻️🇸🇬 加坡-自动, ♻️🇯🇵 日本-自动,♻️🇨🇳 台湾-自动, ♻️🇺🇲 美国-自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇸🇬 加坡节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🔯 香港故转, 🔯 日本故转, 🌐 全部节点, ♻️ 拒绝, 🟢 直连]}
 # 策略组
 proxy-groups:
-  - {name: 🚀 节点选择, type: select, proxies: [♻️ 港台日新韩-自动, ♻️🇭🇰 香港-自动, ♻️🇸🇬 加坡-自动, ♻️🇯🇵 日本-自动,♻️🇨🇳 台湾-自动, ♻️🇺🇲 美国-自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇸🇬 加坡节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🔯 香港故转, 🔯 日本故转, 🌐 全部节点, 🟢 直连]}
+  - {name: 🚀 节点选择, type: select, proxies: [♻️ 港台日新韩-自动, ♻️ 台日新韩-自动, ♻️🇭🇰 香港-自动, ♻️🇸🇬 加坡-自动, ♻️🇯🇵 日本-自动,♻️🇨🇳 台湾-自动, ♻️🇺🇲 美国-自动, ♻️ 自动选择, 🇭🇰 香港节点, 🇸🇬 加坡节点, 🇯🇵 日本节点, 🇺🇲 美国节点, 🔯 香港故转, 🔯 日本故转, 🌐 全部节点, 🟢 直连]}
   - {name: 📹 YouTube,!!merge <<: *pr}
   - {name: 🍀 Google,!!merge <<: *pr}
   - {name: 🤖 ChatGPT,!!merge <<: *pr}
@@ -138,9 +138,10 @@ proxy-groups:
   - {name: 🐬 OneDrive,!!merge <<: *pr}
   - {name: 🪟 Microsoft,!!merge <<: *pr}
   - {name: 🎵 TikTok,!!merge <<: *pr}
-  - {name: 📲 Telegram,!!merge <<: *pr}
-  - {name: 📲 twitter推特, <<: *pr}
-  - {name: 🗣️ facebook, <<: *pr}
+  - {name: 📲 人脉(📲Telegram 📲twitter推特 🗣️facebook),!!merge <<: *pr}
+  # - {name: 📲 Telegram,!!merge <<: *pr}
+  # - {name: 📲 twitter推特, <<: *pr}
+  # - {name: 🗣️ facebook, <<: *pr}
   - {name: 🌳 Amazon, <<: *pr}
   - {name: 🎮 游戏平台, <<: *pr}
   - {name: 📀 流媒体,!!merge <<: *pr}
@@ -186,11 +187,11 @@ rules:
   - RULE-SET,tiktok_domain,🎵 TikTok
   # - RULE-SET,tiktok,🎵 TikTok
   - RULE-SET,speedtest_domain,✈️ Speedtest
-  - RULE-SET,telegram_domain,📲 Telegram
+  - RULE-SET,telegram_domain,📲 人脉(📲Telegram 📲twitter推特 🗣️facebook)
   # - RULE-SET,telegram,📲 Telegram
-  - RULE-SET,twitter推特_domain,📲 twitter推特
+  - RULE-SET,twitter推特_domain,📲 人脉(📲Telegram 📲twitter推特 🗣️facebook)
   # - RULE-SET,twitter推特,📲 twitter推特
-  - RULE-SET,facebook,🗣️ facebook
+  - RULE-SET,facebook,📲 人脉(📲Telegram 📲twitter推特 🗣️facebook)
   - RULE-SET,Amazon,🌳 Amazon
   - RULE-SET,游戏平台_steam,🎮 游戏平台
   # - RULE-SET,游戏平台_sm,🎮 游戏平台
@@ -217,7 +218,8 @@ rules:
   - RULE-SET,cn_domain,🎯 全球直连
   - RULE-SET,google_ip,🍀 Google,no-resolve
   - RULE-SET,netflix_ip,📀 流媒体,no-resolve
-  - RULE-SET,telegram_ip,📲 Telegram,no-resolve
+  - RULE-SET,telegram_ip,📲 人脉(📲Telegram 📲twitter推特 🗣️facebook),no-resolve
+  - RULE-SET,twitter推特_ip,📲 人脉(📲Telegram 📲twitter推特 🗣️facebook),no-resolve
   - RULE-SET,cn_ip,🎯 全球直连
   - MATCH,🐟 漏网之鱼
 rule-anchor:
@@ -279,5 +281,5 @@ rule-providers:
   cn_ip: {!!merge <<: *ip, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"}
   google_ip: {!!merge <<: *ip, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
   telegram_ip: {!!merge <<: *ip, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"}
-  twitter推特_ip: { <<: *ip, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.mrs" }
+  twitter推特_ip: {!!merge <<: *ip, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/twitter.mrs" }
   netflix_ip: {!!merge <<: *ip, url: "https://github.sk365.us.kg/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"}
