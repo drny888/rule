@@ -119,17 +119,17 @@ rule-anchor:
   qcy: &qcy {type: http, interval: 86400, behavior: domain, format: text}
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers:
-  AI1: { <<: *class, url: "✨ AI1,https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/AI.list" }
-  AI2: { <<: *class, url: "✨ AI2,https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/AI2.list" }
-  TikTok: { <<: *class, url: "👩‍👧‍👦 TikTok,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.list" }
-  HBO: { <<: *class, url: "🎥 流媒体,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/HBO/HBO.list" }
-  YouTube: { <<: *class, url: "🎥 流媒体,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.list" }
-  Disney: { <<: *class, url: "🎥 流媒体,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.list" }
-  Netflix: { <<: *class, url: "🎥 流媒体,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.list" }
-  Spotify: { <<: *class, url: "🎥 流媒体,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.list" }
-  # Direct: { <<: *class, url: "➡️ 国内,https:///raw.githubusercontent.com/liandu2024/clash/refs/heads/main/Direct.list" }
-  Proxy: { <<: *class, url: "🌍 国外,https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/Proxy.list" }
-  Global: { <<: *class, url: "🌍 国外,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global.list" }
+  AI1: { <<: *class, url: "✨ AI1,https://github.sk365.us.kg/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/AI.list" }
+  AI2: { <<: *class, url: "✨ AI2,https://github.sk365.us.kg/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/AI2.list" }
+  TikTok: { <<: *class, url: "👩‍👧‍👦 TikTok,https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/TikTok/TikTok.list" }
+  HBO: { <<: *class, url: "🎥 流媒体,https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/HBO/HBO.list" }
+  YouTube: { <<: *class, url: "🎥 流媒体,https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/YouTube/YouTube.list" }
+  Disney: { <<: *class, url: "🎥 流媒体,https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Disney/Disney.list" }
+  Netflix: { <<: *class, url: "🎥 流媒体,https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Netflix/Netflix.list" }
+  Spotify: { <<: *class, url: "🎥 流媒体,https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/Spotify/Spotify.list" }
+  # Direct: { <<: *class, url: "➡️ 国内,https:///github.sk365.us.kg/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/Direct.list" }
+  Proxy: { <<: *class, url: "🌍 国外,https://github.sk365.us.kg/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/Proxy.list" }
+  Global: { <<: *class, url: "🌍 国外,https://github.sk365.us.kg/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global.list" }
   # ruleset=➡️ 国内,[]FINAL
   # private_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs" }
   # direct1: { <<: *class, url: "https://raw.githubusercontent.com/qichiyuhub/rule/master/Direct.list" }
