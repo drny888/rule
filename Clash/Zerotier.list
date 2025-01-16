@@ -2,11 +2,12 @@
 # 域名关键字匹配
 DOMAIN-KEYWORD,zerotier
 DOMAIN-KEYWORD,tailscale
-DOMAIN-KEYWORD,plex
 
 # 域名后缀匹配
 DOMAIN-SUFFIX,zerotier.com
 DOMAIN-SUFFIX,tailscale.com
+DOMAIN-SUFFIX,plexapp.com
+DOMAIN-SUFFIX,plexmediaserver.com
 DOMAIN-SUFFIX,plex.tv
 
 # 远程联机
