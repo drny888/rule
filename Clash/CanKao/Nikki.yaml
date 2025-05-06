@@ -1,0 +1,263 @@
+# 注意规则在满足自己需求情况下，尽量做到精简，不要过度复杂，以免影响性能。
+# 火烧云机场
+proxy-providers:
+  Airport1:
+    url: "https://"
+    type: http
+    interval: 86400
+    health-check:
+      enable: true
+      url: https://www.gstatic.com/generate_204
+      interval: 300
+    proxy: Direct
+    override:
+      additional-prefix: '[机场名称1] '
+      skip-cert-verify: true
+      udp: true
+    header:
+      User-Agent:
+      - "Clash"
+      #- "mihomo"
+      #- "Clash.meta"
+      # # 名字替换，支持正则表达式
+      # proxy-name:
+      #   - pattern: "test"
+      #     target: "TEST"
+      #   - pattern: "IPLC-(.*?)倍"
+      #     target: "iplc x $1"
+# 节点信息
+proxies:
+  - {name: Direct, type: direct, udp: true}
+
+# 全局配置 
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7894
+allow-lan: true
+bind-address: "*"
+ipv6: false
+unified-delay: true
+tcp-concurrent: true
+log-level: warning
+find-process-mode: 'off'
+# interface-name: en0
+global-client-fingerprint: chrome
+keep-alive-idle: 600
+keep-alive-interval: 15
+disable-keep-alive: false
+profile:
+  store-selected: true
+  store-fake-ip: true
+
+# 控制面板
+external-controller: 0.0.0.0:9090
+secret: ""
+external-ui: "/etc/mihomo/run/ui"
+external-ui-name: zashboard
+external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+
+# 嗅探
+sniffer:
+  enable: true
+  sniff:
+    HTTP:
+      ports: [80, 8080-8880]
+      override-destination: true
+    TLS:
+      ports: [443, 8443]
+    QUIC:
+      ports: [443, 8443]
+  force-domain:
+    - "+.v2ex.com"
+  skip-domain:
+    - "rule-set:private_domain,cn_domain"
+    - "dlg.io.mi.com"
+    - "+.push.apple.com"
+    - "+.apple.com"
+    - "+.wechat.com"
+    - "+.qpic.cn"
+    - "+.qq.com"
+    - "+.wechatapp.com"
+    - "+.vivox.com"
+    - "+.oray.com"
+    - "+.sunlogin.net"
+    - "+.msftconnecttest.com"
+    - "+.msftncsi.com"
+
+# 入站  
+tun:
+  enable: true
+  # system/gvisor/mixed
+  stack: mixed
+  dns-hijack: ["any:53", "tcp://any:53"]
+  auto-route: true
+  auto-redirect: true
+  auto-detect-interface: true
+
+# DNS模块
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  ipv6: false
+  respect-rules: true
+  enhanced-mode: fake-ip
+  fake-ip-range: 28.0.0.1/8
+  fake-ip-filter-mode: blacklist
+  fake-ip-filter:
+    - "rule-set:private_domain,cn_domain"
+    - "+.services.googleapis.cn"
+    - "+.xn--ngstr-lra8j.com"
+    - "time.*.com"
+    - "+.pool.ntp.org"
+    - "+.ntp.tencent.com"
+    - "+.ntp1.aliyun.com"
+    - "+.ntp.ntsc.ac.cn"
+    - "+.cn.ntp.org.cn"
+  default-nameserver:
+    - 223.5.5.5
+  proxy-server-nameserver:
+    - https://dns.alidns.com/dns-query
+  # namesever尽量用运营商提供的DNS
+  nameserver:
+    - 223.5.5.5
+    - 119.29.29.29
+ 
+# 出站策略
+# 注意锚点必须放在引用的上方，可以集中把锚点全部放yaml的顶部。
+#pr: &pr-Global {type: select, proxies: [ China, PROXY, 香港自动, 台湾自动, 日本自动, 韩国自动, 新加坡自动, 自动测速, 故障转移]}
+#pr: &pr-YouTube {type: select, proxies: [ China, PROXY, 香港自动, 台湾自动, 日本自动, 韩国自动, 新加坡自动, 自动测速, 故障转移]}
+#pr: &pr-TikTok {type: select, proxies: [ China, PROXY, 台湾自动, 日本自动, 韩国自动, 新加坡自动]}
+#pr: &pr-ChatGPT {type: select, proxies: [ China, PROXY, 台湾自动, 日本自动, 韩国自动, 新加坡自动]}
+#pr: &pr-GitHub {type: select, proxies: [ China, PROXY, 香港自动, 台湾自动, 日本自动, 韩国自动, 新加坡自动, 自动测速, 故障转移]}
+#pr: &pr-Speedtest {type: select, proxies: [ China, PROXY]}
+#pr: &pr-Apple {type: select, proxies: [ China, Global]}
+#pr: &pr-Blibili {type: select, proxies: [ China, Global, 香港自动, 台湾自动, 日本自动, 韩国自动, 新加坡自动, 自动测速, 故障转移]}
+#pr: &pr-Steam {type: select, proxies: [ China, Global, 香港自动, 台湾自动, 日本自动, 韩国自动, 新加坡自动, 自动测速, 故障转移]}
+#pr: &pr-Final {type: select, proxies: [ China, PROXY, 香港自动, 台湾自动, 日本自动, 韩国自动, 新加坡自动, 自动测速, 故障转移]}
+#pr: &pr-Advertising {type: select, proxies: [ China, Global, REJECT]}
+proxy-groups:
+  - {name: PROXY, type: select, include-all: true, filter: "^((?!(DIRECT|Direct|com|刷新|订阅|官网|异常|失败|加入|频道|50倍|10倍|重置|地址|到期|剩余)).)*$",
+      icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Proxy.png"}
+  - {name: Global, type: select, proxies: [ China, PROXY, 香港自动, 台湾自动, 日本自动, 韩国自动, 新加坡自动, 自动测速, 故障转移],
+      icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png"}
+  - {name: YouTube, type: select, proxies: [ China, PROXY, 香港自动, 台湾自动, 日本自动, 韩国自动, 新加坡自动, 自动测速, 故障转移],
+      icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/YouTube.png"}
+  - {name: TikTok, type: select, proxies: [ China, PROXY, 台湾自动, 日本自动, 韩国自动, 新加坡自动],
+      icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/TikTok_2.png"}
+  - {name: ChatGPT, type: select, proxies: [ China, PROXY, 台湾自动, 日本自动, 韩国自动, 新加坡自动],
+      icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ChatGPT.png"}
+  - {name: GitHub, type: select, proxies: [ China, PROXY, 香港自动, 台湾自动, 日本自动, 韩国自动, 新加坡自动, 自动测速, 故障转移],
+      icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png"}
+  - {name: Speedtest, type: select, proxies: [ China, PROXY],
+      icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Speedtest.png"}
+  - {name: Apple, type: select, proxies: [ China, Global],
+      icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Apple.png"}
+  - {name: Blibili, type: select, proxies: [ China, Global, 香港自动, 台湾自动, 日本自动, 韩国自动, 新加坡自动, 自动测速, 故障转移],
+      icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili_3.png"}
+  - {name: Steam, type: select, proxies: [ China, Global, 香港自动, 台湾自动, 日本自动, 韩国自动, 新加坡自动, 自动测速, 故障转移],
+      icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Steam.png"}
+  - {name: China, type: select, proxies: [ Direct, PROXY],
+      icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/China_Map.png"}
+  - {name: Final, type: select, proxies: [ China, PROXY, 香港自动, 台湾自动, 日本自动, 韩国自动, 新加坡自动, 自动测速, 故障转移],
+      icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png"}
+  - {name: Advertising, type: select, proxies: [ China, Global, REJECT],
+      icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Advertising.png"}
+  - {name: 香港自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(官网|异常|刷新|失败|订阅|加入|频道|台|日|韩|新|深|美)).)*$",
+      icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/HK.png"}
+  - {name: 台湾自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(台|TW|(?i)taiwan))^((?!(官网|异常|刷新|失败|订阅|加入|频道|港|日|韩|新|美)).)*$" ,
+      icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/TW.png"}
+  - {name: 日本自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(官网|异常|刷新|失败|订阅|加入|频道|港|台|韩|新|美)).)*$" ,
+      icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/JP.png"}
+  - {name: 韩国自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(韩|KR|(?i)Seoul))^((?!(官网|异常|刷新|失败|订阅|加入|频道|港|台|日|新|美)).)*$" ,
+      icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/KR.png"}
+  - {name: 新加坡自动, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(新|SG|狮|(?i)Singapore))^((?!(官网|异常|刷新|失败|订阅|加入|频道|港|台|韩|日|美)).)*$" ,
+      icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/SG.png"}
+  - {name: 自动测速, type: url-test, include-all: true, tolerance: 20, interval: 300, filter: "^((?!(DIRECT|Direct|com|刷新|订阅|官网|异常|失败|加入|频道|50倍|10倍|重置|地址|到期|剩余)).)*$",
+      icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Auto.png"}
+  - {name: 故障转移, type: fallback, include-all: true, tolerance: 20, interval: 60, proxies: [ 台湾自动, 香港自动, 日本自动, 韩国自动, 新加坡自动], filter:  "(?=.*(无视所有独立节点|(?i)nonono))^((?!(港|台|日|新|美)).)*$",
+     icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Static_1.png"}
+#  - {name: 🔯 香港故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(港|HK|(?i)Hong))^((?!(台|日|韩|新|深|美)).)*$"}
+#  - {name: 🔯 日本故转, type: fallback, include-all: true, tolerance: 20, interval: 300, filter: "(?=.*(日|JP|(?i)Japan))^((?!(港|台|韩|新|美)).)*$" }
+#  - {name: Global, type: select, proxies: [ Direct, PROXY, 香港自动, 台湾自动, 日本自动, 韩国自动, 新加坡自动, 自动测速], icon: "https://raw.githubusercontent.com/Orz-3/mini/master/Color/Global.png"} 
+# 规则匹配
+# 此规则部分没有做防泄露处理，因为弊严重大于利！
+rules:
+  - DOMAIN-SUFFIX,qichiyu.com,Global
+  - RULE-SET,MyDIRCT,China
+  - RULE-SET,MyPROXY,Global
+  - RULE-SET,private_domain,China
+  - RULE-SET,WeChat,China
+  - RULE-SET,apple_domain,Apple
+  - RULE-SET,Bilibili_1,Blibili
+  - RULE-SET,Bilibili_2,Blibili
+  - RULE-SET,proxylite,Global
+  - RULE-SET,ai,ChatGPT
+  - RULE-SET,steam_domain,Steam
+  - RULE-SET,github_1_domain,GitHub
+  - RULE-SET,github_2_domain,GitHub
+  - RULE-SET,youtube_domain,YouTube
+  - RULE-SET,google_domain,Global
+  - RULE-SET,microsoft_domain,China
+  - RULE-SET,tiktok_domain,TikTok
+  - RULE-SET,speedtest_domain,Speedtest
+  - RULE-SET,telegram_domain,Global
+  - RULE-SET,Global_liandu2024,Global
+  - RULE-SET,netflix_domain,Global
+  - RULE-SET,gfw_domain,Global
+  - RULE-SET,geolocation-!cn,Global
+  - RULE-SET,google_ip,Global,no-resolve
+  - RULE-SET,netflix_ip,Global,no-resolve
+  - RULE-SET,telegram_ip,Global,no-resolve
+  - RULE-SET,cn_domain,China
+  - RULE-SET,cn_ip,China
+  - RULE-SET,advertising_qx,Advertising
+  - RULE-SET,advertising_AdRule,Advertising
+  - RULE-SET,advertising_surge2,Advertising
+  - RULE-SET,advertising_BanEasyPrivacy,Advertising
+  - MATCH,Final
+
+# 规则集
+rule-anchor:
+  ip: &ip {type: http, interval: 86400, behavior: ipcidr, format: mrs}
+  domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
+  class: &class {type: http, interval: 86400, behavior: classical, format: text}
+rule-providers: 
+  #直连规则
+  MyDIRCT: { <<: *class, url: "https://raw.githubusercontent.com/532377308/Openclash/refs/heads/main/MyDIRCT.list"} #我的直连
+  private_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"} #直连列表 
+  microsoft_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs"} #microsoft
+  apple_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs"} #apple
+  Bilibili_1: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/BilibiliHMT.list"} #Bilibili
+  Bilibili_2: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/Ruleset/Bilibili.list"} #Bilibili
+  cn_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cn.mrs"} #中国域名
+  geolocation-!cn: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/geolocation-!cn.mrs"} #地理位置-中国
+  WeChat: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/QuantumultX/WeChat/WeChat.list"} #微信
+  steam_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/steam.mrs"} #steam
+  #小规则
+  MyPROXY: { <<: *class, url: "https://raw.githubusercontent.com/532377308/Openclash/refs/heads/main/MyPROXY.list"} #我的代理 
+  proxylite: { <<: *class, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/master/ProxyLite.list"} #代理列表 
+  ai: {  <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-chat-!cn.mrs" } #Ai
+  tiktok_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs"} #tiktok
+  youtube_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs"} #YouTube 
+  google_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"} #Google
+  github_1_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/github.mrs"} #github
+  github_2_domain: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/GitHub/GitHub.list"} #github
+  telegram_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.mrs"} #telegram
+  netflix_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/netflix.mrs"} #netflix
+  speedtest_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs"} #speedtest
+  #大规则
+  Global_domain: { <<: *class, url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/QuantumultX/Global/Global.list"} #Global
+  gfw_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/gfw.mrs"} #gfw
+  Global_liandu2024: { <<: *class, url: "https://raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Proxy.list"} #Global@liandu2024 qx
+  #IP集
+  cn_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/cn.mrs"} #中国IP
+  google_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"} #谷歌IP
+  telegram_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.mrs"} #telegram IP
+  netflix_ip: { <<: *ip, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/netflix.mrs"} #netflix IP
+  #广告
+  advertising_qx: { <<: *class, url: "https://raw.githubusercontent.com/Cats-Team/AdRules/main/qx.conf"} #广告拦截
+  advertising_AdRule: { <<: *class, url: "https://raw.githubusercontent.com/NobyDa/Script/master/Surge/AdRule.list"} #广告拦截
+  advertising_surge2: { <<: *class, url: "https://anti-ad.net/surge2.txt"} #广告拦截
+  advertising_BanEasyPrivacy: { <<: *class, url: "https://raw.githubusercontent.com/ACL4SSR/ACL4SSR/master/Clash/BanEasyPrivacy.list"} #广告拦截
