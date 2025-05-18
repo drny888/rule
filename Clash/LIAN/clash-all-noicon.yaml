@@ -257,7 +257,7 @@ rule-providers:
   Google / Domain: {<<: *domain, url: "https://github.geekery.cn/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs"}
   Google / IP: {<<: *ip, url: "https://github.geekery.cn/raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/google.mrs"}
   TEST / Domain: {<<: *class, url: "https://github.geekery.cn/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Check.list"}
-  #ZEROTIER内网穿透 / Domain: {<<: *class, url: "https://github.geekery.cn/raw.githubusercontent.com/drny888/rule/refs/heads/main/Clash/Zerotier.list"}
+  #ZEROTIER内网穿透 / Domain: {<<: *class, url: "https://github.drny168.top/raw.githubusercontent.com/drny888/rule/refs/heads/main/Clash/Zerotier.list"}
   Proxy / Domain: {<<: *class, url: "https://github.geekery.cn/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Proxy.list"}
   Globe / Domain: {<<: *class, url: "https://github.geekery.cn/raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Global/Global.list"} 
   Direct / Domain: {<<: *class, url: "https://github.geekery.cn/raw.githubusercontent.com/liandu2024/clash/refs/heads/main/list/Direct.list"}
