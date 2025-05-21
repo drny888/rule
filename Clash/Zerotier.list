@@ -12,8 +12,9 @@ DOMAIN-SUFFIX,plexmediaserver.com
 DOMAIN-SUFFIX,plex.tv
 DOMAIN-SUFFIX,dsmynas.com
 DOMAIN-SUFFIX,s-knight.net
-DOMAIN-SUFFIX,skck168.com
 DOMAIN-SUFFIX,s-knight.cn
+DOMAIN-SUFFIX,skck168.com
+DOMAIN-SUFFIX,zyz007.dsmynas.com
 # 远程联机
 DOMAIN-SUFFIX,rustdesk.com
 
