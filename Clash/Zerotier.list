@@ -4,8 +4,10 @@ DOMAIN-KEYWORD,zerotier
 DOMAIN-KEYWORD,tailscale
 DOMAIN-KEYWORD,zyz007
 DOMAIN-KEYWORD,immtele
+DOMAIN-KEYWORD,istoreos
 
 # 域名后缀匹配
+DOMAIN-SUFFIX,istore.istoreos.com
 DOMAIN-SUFFIX,immtele.com
 DOMAIN-SUFFIX,zerotier.com
 DOMAIN-SUFFIX,tailscale.com
