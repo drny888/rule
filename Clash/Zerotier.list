@@ -22,6 +22,8 @@ DOMAIN-SUFFIX,zyz007.dsmynas.com
 DOMAIN-SUFFIX,synology.com
 # 远程联机
 DOMAIN-SUFFIX,rustdesk.com
+# 赛力斯api
+DOMAIN-SUFFIX,fgaiservice.com
 
 # IP段匹配 zerotier
 IP-CIDR,103.195.103.66/32,no-resolve
