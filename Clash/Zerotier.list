@@ -7,6 +7,7 @@ DOMAIN-KEYWORD,immtele
 DOMAIN-KEYWORD,istoreos
 
 # 域名后缀匹配
+DOMAIN-SUFFIX,djigate.com
 DOMAIN-SUFFIX,istore.istoreos.com
 DOMAIN-SUFFIX,immtele.com
 DOMAIN-SUFFIX,zerotier.com
